@@ -1,0 +1,113 @@
+/* Geral da Aplicação */
+
+* {
+    font-family: Google Sans, Roboto, RobotoDraft, Helvetica, Arial, sans-serif;
+}
+
+.user {
+    margin-left: 35%;
+    max-width: 150px;
+}
+
+body {
+    background: #0f0c29;
+    background: -webkit-linear-gradient(to left, #24243e, #302b63, #0f0c29);
+    background: linear-gradient(to left, #24243e, #302b63, #0f0c29);
+}
+
+.container {
+    margin: 0 auto;
+}
+
+.container {
+    height: 850px;
+}
+
+.jumbotron {
+    background: #fdfdfd !important;
+    border-radius: 5px;
+    box-shadow: 0 3px 5px #7c7c7c;
+}
+
+.titulo-login p,
+.titulo-cadastrar p,
+.titulo-recovery p,
+.titulo-formulario p {
+    color: #302b63;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    border-bottom: 4px solid #f24333;
+    font-size: 25px;
+}
+
+.titulo-login p {
+    width: 150px;
+}
+
+.titulo-cadastrar p {
+    width: 250px;
+}
+
+.titulo-recovery p {
+    width: 400px;
+}
+
+.titulo-formulario p {
+    width: 350px;
+    color: white !important;
+    text-transform: none;
+}
+
+.btn-cadastrar {
+    background: #f24333 !important;
+    width: 300px;
+    height: 45px;
+    color: white !important;
+}
+
+.btn-cadastrar:hover {
+    opacity: 0.9;
+    color: white;
+}
+
+.btn-cadastrar a{
+    color: white !important;
+    padding-top: 10px;
+}
+
+.btn, .custom-file-control:before{
+    padding: .7rem 1rem !important;
+}
+
+.btn-limpar,
+.btn-limpar-form {
+    width: 200px;
+    background: #4d55cc !important;
+    margin-right: 95px;
+    height: 45px;
+    color: white !important;
+}
+
+.btn-limpar-form {
+    margin-right: 35px !important;
+}
+
+.btn-limpar:hover {
+    opacity: 0.9;
+}
+
+@media only screen and (max-width: 580px) {
+    img {
+        max-width: 200px;
+        margin-left: 20% !important;
+    }
+}
+
+@media only screen and (max-width: 760px) {
+    .btn-limpar {
+        width: 100%;
+    }
+    .btn {
+        width: 100% !important;
+    }
+}

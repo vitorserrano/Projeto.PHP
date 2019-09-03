@@ -1,0 +1,17 @@
+.formulario{
+  background: #fdfdfd !important;
+}
+
+.navbar-brand{
+  font-size: 25px;
+}
+
+.navbar .fa{
+  color: #f24333;
+  font-size: 30px;
+  padding: 0 .5em;
+}
+
+.nav-link{
+  color: #f24333 !important;
+}
