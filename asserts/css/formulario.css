@@ -1,17 +1,26 @@
-.formulario{
-  background: #fdfdfd !important;
+.formulario {
+    background: #ffffff !important;
+    border: 1px solid #d8dee2;
 }
 
-.navbar-brand{
-  font-size: 25px;
+.navbar {
+    background: #24292e
 }
 
-.navbar .fa{
-  color: #f24333;
-  font-size: 30px;
-  padding: 0 .5em;
+.navbar-brand {
+    font-size: 25px;
 }
 
-.nav-link{
-  color: #f24333 !important;
+.navbar .fa {
+    color: #ffffff;
+    font-size: 30px;
+    padding: 0 .5em;
+}
+
+.nav-link {
+    color: #ffffff !important;    
+    text-transform: none !important;
+    font-weight: 501 !important;
+    font-size: 18px !important;    
+    letter-spacing: -.5px !important;
 }
