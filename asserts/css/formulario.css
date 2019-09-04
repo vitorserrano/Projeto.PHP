@@ -13,14 +13,14 @@
 
 .navbar .fa {
     color: #ffffff;
-    font-size: 30px;
+    font-size: 25px;
     padding: 0 .5em;
 }
 
 .nav-link {
-    color: #ffffff !important;    
+    color: #ffffff !important;
     text-transform: none !important;
     font-weight: 501 !important;
-    font-size: 18px !important;    
+    font-size: 18px !important;
     letter-spacing: -.5px !important;
 }

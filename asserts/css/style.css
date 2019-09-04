@@ -31,7 +31,7 @@ a:hover {
 .jumbotron {
     background: white !important;
     border-radius: 5px;
-    border: 1px solid #d8dee2;    
+    border: 1px solid #d8dee2;
 }
 
 .titulo h1 {
@@ -41,10 +41,14 @@ a:hover {
     letter-spacing: -.5px;
 }
 
-.titulo-formulario p {
-    width: 350px;
+.btn,
+.custom-file-control:before {
+    padding: .7rem 1rem !important;
+}
+
+.btn:hover {
+    opacity: 0.9 !important;
     color: white !important;
-    text-transform: none;
 }
 
 .btn-cadastrar {
@@ -56,19 +60,9 @@ a:hover {
     font-weight: 501 !important;
 }
 
-.btn-cadastrar:hover {
-    opacity: 0.9;
-    color: white;
-}
-
 .btn-cadastrar a {
     color: white !important;
     padding-top: 10px;
-}
-
-.btn,
-.custom-file-control:before {
-    padding: .7rem 1rem !important;
 }
 
 .btn-limpar,
@@ -77,17 +71,6 @@ a:hover {
     background: #3a43c4 !important;
     height: 45px;
     color: white !important;
-}
-
-.btn-voltar {
-    width: 150px;
-    background: #c90101 !important;
-    height: 45px;
-    color: white !important;
-}
-
-.btn-limpar:hover {
-    opacity: 0.9;
 }
 
 @media only screen and (max-width: 580px) {

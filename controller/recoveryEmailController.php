@@ -11,7 +11,7 @@ $stmt = Db::connection()->prepare($consultaEmail);
 $stmt->bindValue(":email", $email);
 $stmt->execute();
 $result = $stmt->fetch();
-$idfdp = $result["id_usuario"];
+$id_user = $result["id_usuario"];
 $retorno = $stmt->rowCount();
 
 if($retorno > 0)

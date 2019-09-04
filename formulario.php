@@ -33,51 +33,43 @@
                 <ul class="navbar-nav">
                     <li class="nav-item active">
                         <a class="nav-link" href="#">Formulário <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="#">Usuário <span class="sr-only">(current)</span></a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link " href="#"><?php echo $_SESSION['id_email']; ?> <span class="sr-only">(current)</span></a>
+                    </li>                    
+                    <li class="nav-item float-right">
+                        <a class="nav-link " href="#"><i class="fa fa-user-circle"></i><?php echo $_SESSION['id_nome']; ?> <span class="sr-only">(current)</span></a>
                     </li>
                 </ul>
             </div>
         </nav>
 
         <div class="container mt-5">
-            <div class="titulo-formulario col-md-12">
-                <p>Formulário de Postagem</p>
+            <div class="titulo col-md-12">
+                <h1>Formulário de Postagem</h1>
             </div>
-            <form class="formulario col-md-12 py-2">
-                <div class="form-row">
-                    <div class="form-group bmd-form-group col-md-6">
-                        <label for="formGroupExampleInput" class="bmd-label-floating">Título</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput">
-                    </div>
+            <form method="POST" action="controller/cadastrarConteudoController.php">
+                <div class="formulario form-row col-md-12 py-2">
+                    <div class="form-group bmd-form-group col-md-12">
+                        <label class="bmd-label-floating">Título</label>
+                        <input name="titulo_postagem" type="text" class="form-control">
+                    </div>                   
 
-                    <div class="form-group bmd-form-group col-md-6">
-                        <label for="formGroupExampleInput" class="bmd-label-floating">Data de Criação</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput">
+                    <div class="form-group col-md-6">
+                        <label class="bmd-label-floating">Resumo</label>
+                        <textarea name="resumo_postagem" type="text" class="form-control" rows="3"></textarea>
                     </div>
 
                     <div class="form-group col-md-6">
-                        <label for="exampleTextarea" class="bmd-label-floating">Resumo</label>
-                        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
-                    </div>
-
-                    <div class="form-group col-md-6">
-                        <label for="exampleTextarea" class="bmd-label-floating">Conteudo do Post</label>
-                        <textarea class="form-control" id="exampleTextarea" rows="3"></textarea>
+                        <label class="bmd-label-floating">Conteudo do Post</label>
+                        <textarea name="conteudo_postagem" type="text" class="form-control" rows="3"></textarea>
                     </div>
 
                     <div class="form-group bmd-form-group col-md-6">
-                        <label for="formGroupExampleInput" class="bmd-label-floating">Url da Imagem</label>
-                        <input type="url" class="form-control" id="formGroupExampleInput">
+                        <label class="bmd-label-floating">Url da Imagem</label>
+                        <input name="url_postagem" type="text" class="form-control">
                     </div>
 
                     <div class="form-group bmd-form-group col-md-6">
-                        <label for="formGroupExampleInput" class="bmd-label-floating">Autor</label>
-                        <input type="text" class="form-control" id="formGroupExampleInput">
+                        <label class="bmd-label-floating">Autor</label>
+                        <input name="autor_postagem" type="text" class="form-control">
                     </div>
                     <div class="form-group bmd-form-group col-md-12 float-right">
                         <button type="submit" class="btn-cadastrar btn float-right">Enviar Conteudo</button>

@@ -61,27 +61,41 @@
                             </div>
 
                             <!-- Botões de cadastramento e remoção dos dados digitados -->
-                            <div class="form-group">
-                                <button type="submit" class="btn-cadastrar btn">Cadastrar</button>                                
-                            </div>
+                            <div class="form-group bmd-form-group">
+                                <button type="submit" class="btn-cadastrar btn">Cadastrar</button>
+                                <p>Cadastre-se para ter acesso a <strong> Projeto.PHP!</strong></p>                                
+                            </div>                           
 
-                            <div class="form-group">
-                                <button class="btn-voltar btn"><< Voltar</button>
-                                <button type="reset" class="btn-limpar btn">Limpar Dados</button>
-                                <p>Cadastre-se para ter acesso a <strong> Projeto.PHP!</strong></p>
-                            </div>
-
-                            <?php if (isset($_GET['erro'])) { ?>
+                            <?php if (isset($_GET['nome'])) { ?>
                             <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                <strong>Holy guacamole!</strong> You should check in on some of those fields below.
+                                O campo <strong>"NOME"</strong> está vazio.
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
                             </div>
                             <?php } ?>
+
+                            <?php if (isset($_GET['email'])) { ?>
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                O campo <strong>"E-MAIL"</strong> está vazio.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <?php } ?>
+
+                            <?php if (isset($_GET['senha'])) { ?>
+                            <div class="alert alert-warning alert-dismissible fade show" role="alert">
+                                O campo <strong>"SENHA"</strong> está vazio.
+                                <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                                    <span aria-hidden="true">&times;</span>
+                                </button>
+                            </div>
+                            <?php } ?>
+
                             <?php if (isset($_GET['email_exist'])) { ?>
                             <div class="alert alert-warning alert-dismissible fade show" role="alert">
-                                <strong>Holy guacamole!</strong> Email ja cadastrado.
+                                Endereço de<strong> Email </strong> já cadastrado.
                                 <button type="button" class="close" data-dismiss="alert" aria-label="Close">
                                     <span aria-hidden="true">&times;</span>
                                 </button>
