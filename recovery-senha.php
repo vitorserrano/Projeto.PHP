@@ -17,19 +17,16 @@
     </head>
 
     <body>
-
-        <!-- Container que possui o conteúdo de Recovery -->
+        
         <div class="container-fluid">
 
             <div class="container mt-4">
 
                 <div class="form-row justify-content-center text-center ">
-                    <div class="form-group col-md-12">
-                        <!-- Imagem central da página -->
-                        <img class="user" src="img/user-recovery.png" alt="">
+                    <div class="logotipo form-group col-md-12">                        
+                        <i class="fa fa-rebel"></i>
                     </div>
-                    <div class="form-group col-md-12">
-                        <!-- Título da Página  -->
+                    <div class="form-group col-md-12">                        
                         <div class="titulo">
                             <h1>Recuperação de Senha - <strong> 2/2 </strong></h1>
                         </div>
@@ -38,19 +35,16 @@
 
                 <div class="form-row justify-content-center">
                     <div class="jumbotron py-1">
-                      
-                        <!-- Formulário onde possui os campos da página RECOVERY -->
+                    
                         <form method="POST" action="controller/recoverySenhaController.php">
 
-                            <!-- Input da Nova Senha -->
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating">Nova Senha</label>
                                 <input name="senha_usuario" type="password" class="form-control">
                             </div>
 
-                            <!-- Botões de cadastramento e remoção dos dados digitados -->
-                            <div class="form-group bmd-form-group">                                
-                                <button type="submit" class="btn-cadastrar btn">Recuperar Senha</button>
+                            <div class="form-group bmd-form-group">
+                                <button type="submit" class="btn-register btn">Recuperar Senha</button>
                             </div>
 
                         </form>

@@ -19,7 +19,7 @@ if ($retorno > 0) {
    $_SESSION['id_usuario'] = $usuario['id_usuario'];
    $_SESSION['id_nome'] = $usuario['nome_usuario'];
    $_SESSION['id_email'] = $usuario['email_usuario'];
-   header('location: ../formulario.php');
+   header('location: ../home.php');
 } else {
   header('location: ../login.php?erro=true');
   exit;

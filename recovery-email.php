@@ -18,18 +18,15 @@
 
     <body>
 
-        <!-- Container que possui o conteúdo de Recovery -->
         <div class="container-fluid">
 
             <div class="container mt-4">
 
                 <div class="form-row justify-content-center text-center ">
-                    <div class="form-group col-md-12">
-                        <!-- Imagem central da página -->
-                        <img class="user" src="img/user-recovery.png" alt="">
+                    <div class="logotipo form-group col-md-12">
+                        <i class="fa fa-rebel"></i>
                     </div>
                     <div class="form-group col-md-12">
-                        <!-- Título da Página  -->
                         <div class="titulo">
                             <h1>Recuperação de Senha - <strong> 1/2</strong></h1>
                         </div>
@@ -39,19 +36,16 @@
                 <div class="form-row justify-content-center">
                     <div class="jumbotron py-2">
 
-                        <!-- Formulário onde possui os campos da página RECOVERY -->
                         <form method="POST" action="controller/recoveryEmailController.php">
 
-                            <!-- Input do E-mail  -->
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating">E-mail</label>
                                 <input name="email_usuario" type="email" class="form-control">
                             </div>
 
-                            <!-- Botões de cadastramento e remoção dos dados digitados -->
                             <div class="form-group bmd-form-group">
-                                <button type="submit" class="btn-cadastrar btn">Confirmar E-mail</button>
-                            </div>                            
+                                <button type="submit" class="btn-register btn">Confirmar E-mail</button>
+                            </div>
 
                             <?php if (isset($_GET['erro'])) { ?>
                             <div class="alert alert-warning alert-dismissible fade show" role="alert">

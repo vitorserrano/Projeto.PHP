@@ -17,24 +17,25 @@
         <!-- Link para o Bootstrap Material Design -->
         <link rel="stylesheet" href="asserts/css/bootstrap-material-design.min.css">
 
+        <link rel="stylesheet" type="text/css" href="https://cdn.datatables.net/1.10.19/css/jquery.dataTables.css">
+
         <title>Projeto</title>
     </head>
 
     <body>
-
         <div class="container-fluid">
 
             <nav class="navbar navbar-expand-lg navbar-dark">
                 <i class="fa fa-rebel"></i> <a class="navbar-brand" id="logo" href="home.php">Projeto.PHP</a>
                 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                                  <span class="navbar-toggler-icon"></span>
-                                </button>
+                          <span class="navbar-toggler-icon"></span>
+                        </button>
                 <div class="collapse navbar-collapse" id="navbarText">
                     <ul class="navbar-nav mr-auto">
                         <li class="nav-item dropdown">
                             <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      Postagem
-                                    </a>
+                              Postagem
+                            </a>
                             <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                                 <a class="dropdown-item" href="formulario.php">Cadastrar Postagem</a>
                                 <div class="dropdown-divider"></div>
@@ -43,7 +44,7 @@
                         </li>
                     </ul>
                     <span class="navbar-text">
-                       <a class="nav-link " href="#"><i class="fa fa-user-circle"></i><?php echo $_SESSION['id_nome']; ?> <span class="sr-only">(current)</span></a>
+                        <a class="nav-link " href="#"><i class="fa fa-user-circle"></i><?php echo $_SESSION['id_nome']; ?> <span class="sr-only">(current)</span></a>
                     </span>
                 </div>
             </nav>
@@ -52,7 +53,7 @@
 
                 <div class="form-row">
                     <div class="header-formulario col-md-12">
-                        <h1>Cadastrar Postagem</h1>
+                        <h1>Postagens Cadastradas</h1>
                     </div>
                 </div>
 
@@ -60,34 +61,35 @@
 
                     <div class="formulario form-row py-2">
 
-                        <div class="form-group bmd-form-group col-md-12">
-                            <label class="bmd-label-floating">Título</label>
-                            <input name="titulo_postagem" type="text" class="form-control">
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <label class="bmd-label-floating">Resumo</label>
-                            <textarea name="resumo_postagem" type="text" class="form-control" rows="3"></textarea>
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <label class="bmd-label-floating">Conteúdo do Post</label>
-                            <textarea name="conteudo_postagem" type="text" class="form-control" rows="3"></textarea>
-                        </div>
-
-                        <div class="form-group bmd-form-group col-md-6">
-                            <label class="bmd-label-floating">Url da Imagem</label>
-                            <input name="url_postagem" type="text" class="form-control">
-                        </div>
-
-                        <div class="form-group bmd-form-group col-md-6">
-                            <label class="bmd-label-floating">Autor</label>
-                            <input name="autor_postagem" type="text" class="form-control">
-                        </div>
-                        <div class="form-group bmd-form-group col-md-12 float-right">
-                            <button type="submit" class="btn-register btn float-right">Enviar Conteudo</button>
-                            <button type="reset" class="btn-clear-form btn float-right">Limpar Dados</button>
-                        </div>
+                        <table class="table table-hover">
+                            <thead>
+                                <tr>
+                                    <th scope="col">Código</th>
+                                    <th scope="col">Título</th>
+                                    <th scope="col">Data de Criação</th>
+                                    <th scope="col">Autor</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <th scope="row">1</th>
+                                    <td>Mark</td>
+                                    <td>Otto</td>
+                                    <td>@mdo</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">2</th>
+                                    <td>Jacob</td>
+                                    <td>Thornton</td>
+                                    <td>@fat</td>
+                                </tr>
+                                <tr>
+                                    <th scope="row">3</th>
+                                    <td colspan="2">Larry the Bird</td>
+                                    <td>@twitter</td>
+                                </tr>
+                            </tbody>
+                        </table>
 
                     </div>
 

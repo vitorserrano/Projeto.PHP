@@ -1,10 +1,31 @@
 .formulario {
-    background: #ffffff !important;
-    border: 1px solid #d8dee2;
+    background-color: #fff;
+    border: 1px solid #d1d5da;
+    border-radius: 3px;
+    color: #586069 !important;
+    padding: 20px !important;
 }
 
 .navbar {
-    background: #24292e
+    background: #0f0c29;    
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);    
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);    
+}
+
+#logo {
+    color: #ffffff !important;
+}
+
+#logo:hover {
+    opacity: 0.9 !important;
+}
+
+.navbar a {
+    color: #fdfdfd !important;
+    text-transform: none !important;
+    font-weight: 601 !important;
+    font-size: 20px !important;
+    letter-spacing: -.5px !important;
 }
 
 .navbar-brand {
@@ -13,14 +34,57 @@
 
 .navbar .fa {
     color: #ffffff;
-    font-size: 25px;
+    font-size: 35px;
     padding: 0 .5em;
 }
 
-.nav-link {
-    color: #ffffff !important;
-    text-transform: none !important;
-    font-weight: 501 !important;
-    font-size: 18px !important;
+.nav-link:hover {
+    opacity: 0.9 !important;
+}
+
+.dropdown-menu .dropdown-item {
+    color: #24292e !important;
+    font-weight: 400 !important;
     letter-spacing: -.5px !important;
+}
+
+.header-formulario {
+    background-color: #e9eef3;
+    border: 1px solid #d1d5da;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    margin: -1px -1px 0;
+    padding: 14px;
+}
+
+.header-formulario h1 {
+    color: #24292e;
+    font-size: 24px;
+    font-weight: 600;
+    letter-spacing: -.5px;
+    padding-left: 15px;
+}
+
+.header-formulario h1:hover {
+    opacity: 0.9;
+}
+
+.btn-clear-form {
+    width: 150px;
+    background: #1074e7 !important;
+    height: 45px;
+    color: white !important;
+    margin-right: 75px;
+}
+
+.table {
+    color: #586069 !important;
+    font-weight: 600 !important;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol !important;
+}
+
+@media only screen and (max-width: 760px) {
+    .btn-clear-form {
+        margin-right: 0;
+    }
 }

@@ -1,0 +1,11 @@
+.titulo-home h1{
+  color:#a1a1a1;
+  font-size: 22px;
+  font-weight: 300;
+  letter-spacing: -.5px
+}
+
+.logotipo-home .fa{
+  color:#d9d9dc;
+  font-size: 250px;
+}

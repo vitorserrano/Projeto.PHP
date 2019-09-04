@@ -17,54 +17,46 @@
     </head>
 
     <body>
-
-        <!-- Container que possui o conteúdo de Cadastramento -->
+       
         <div class="container-fluid">
 
             <div class="container mt-4">
 
                 <div class="form-row justify-content-center text-center ">
-                    <div class="form-group col-md-12">
-                        <!-- Imagem central da página -->
-                        <img class="user" src="img/user-cadastrar.png" alt="">
+                    <div class="logotipo form-group col-md-12">                        
+                        <i class="fa fa-rebel"></i>
                     </div>
-                    <div class="form-group col-md-12">
-                        <!-- Título da Página  -->
+                    <div class="form-group col-md-12">                        
                         <div class="titulo">
-                            <h1>Cadastrar Usuário</h1>                            
+                            <h1>Cadastrar Usuário</h1>
                         </div>
                     </div>
                 </div>
 
+
                 <div class="form-row justify-content-center">
                     <div class="jumbotron py-1">
 
-                        <!-- Formulário onde possui os campos da página CADASTRAR -->
-                        <form method="POST" action="controller/cadastrarController.php">
-
-                            <!-- Input do Nome -->
+                        <form method="POST" action="controller/cadastrarController.php">                
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating">Nome</label>
                                 <input name="nome_usuario" type="text" class="form-control">
                             </div>
-
-                            <!-- Input do E-mail -->
+                            
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating">E-mail</label>
                                 <input name="email_usuario" type="email" class="form-control">
                             </div>
-
-                            <!-- Input da senha -->
+                            
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating">Senha</label>
                                 <input name="senha_usuario" type="password" class="form-control">
                             </div>
 
-                            <!-- Botões de cadastramento e remoção dos dados digitados -->
                             <div class="form-group bmd-form-group">
-                                <button type="submit" class="btn-cadastrar btn">Cadastrar</button>
-                                <p>Cadastre-se para ter acesso a <strong> Projeto.PHP!</strong></p>                                
-                            </div>                           
+                                <button type="submit" class="btn-register btn">Cadastrar</button>
+                                <p>Cadastre-se para ter acesso a <strong> Projeto.PHP!</strong></p>
+                            </div>
 
                             <?php if (isset($_GET['nome'])) { ?>
                             <div class="alert alert-warning alert-dismissible fade show" role="alert">

@@ -12,6 +12,8 @@
         <link rel="stylesheet" href="./asserts/css/style.css">
         <!-- CSS do formulário -->
         <link rel="stylesheet" href="asserts/css/formulario.css">
+        <!-- CSS do Home -->
+        <link rel="stylesheet" href="asserts/css/home.css">
         <!-- Link para os ícones do Font-Awesome -->
         <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
         <!-- Link para o Bootstrap Material Design -->
@@ -49,50 +51,14 @@
             </nav>
 
             <div class="container mt-4">
-
-                <div class="form-row">
-                    <div class="header-formulario col-md-12">
-                        <h1>Cadastrar Postagem</h1>
+                <div class="form-row justify-content-center text-center ">
+                    <div class="logotipo-home form-group col-md-12 py-1 mt-5">
+                        <i class="fa fa-rebel py-4"></i>
+                        <div class="titulo-home">
+                            <h1>Utilize o menu no canto superior esquerdo para realizar <strong>cadastros de postagens</strong></br> ou verificar as <strong>postagens já cadastradas.</strong></h1>
+                        </div>
                     </div>
                 </div>
-
-                <form method="POST" action="controller/cadastrarConteudoController.php">
-
-                    <div class="formulario form-row py-2">
-
-                        <div class="form-group bmd-form-group col-md-12">
-                            <label class="bmd-label-floating">Título</label>
-                            <input name="titulo_postagem" type="text" class="form-control">
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <label class="bmd-label-floating">Resumo</label>
-                            <textarea name="resumo_postagem" type="text" class="form-control" rows="3"></textarea>
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <label class="bmd-label-floating">Conteúdo do Post</label>
-                            <textarea name="conteudo_postagem" type="text" class="form-control" rows="3"></textarea>
-                        </div>
-
-                        <div class="form-group bmd-form-group col-md-6">
-                            <label class="bmd-label-floating">Url da Imagem</label>
-                            <input name="url_postagem" type="text" class="form-control">
-                        </div>
-
-                        <div class="form-group bmd-form-group col-md-6">
-                            <label class="bmd-label-floating">Autor</label>
-                            <input name="autor_postagem" type="text" class="form-control">
-                        </div>
-                        <div class="form-group bmd-form-group col-md-12 float-right">
-                            <button type="submit" class="btn-register btn float-right">Enviar Conteudo</button>
-                            <button type="reset" class="btn-clear-form btn float-right">Limpar Dados</button>
-                        </div>
-
-                    </div>
-
-                </form>
-
             </div>
         </div>
 

@@ -19,18 +19,16 @@
     </head>
 
     <body>
-
-        <!-- Container que possui o conteúdo do Login -->
+       
         <div class="container-fluid">
 
             <div class="container mt-4">
-                <div class="form-row justify-content-center text-center ">
-                    <div class="form-group col-md-12">
-                        <!-- Imagem central da página -->
-                        <img class="user" src="img/user-login.png" alt="">
+
+                <div class="form-row justify-content-center text-center ">                    
+                    <div class="logotipo form-group col-md-12 py-1">                        
+                        <i class="fa fa-rebel"></i>
                     </div>
-                    <div class="form-group col-md-12">
-                        <!-- Título da Página  -->
+                    <div class="form-group col-md-12">                        
                         <div class="titulo">
                             <h1>Login para<strong> Projeto.PHP</strong></h1>
                         </div>
@@ -39,32 +37,27 @@
 
                 <div class="form-row justify-content-center">
                     <div class="jumbotron py-1">
-                        <!-- Formulário onde possui os campos da página LOGIN -->
+                        
                         <form method="POST" action="./controller/logarController.php">
-
-                            <!-- Input do Login -->
+                        
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating">E-mail</label>
                                 <input name="email_usuario" type="email" class="form-control">
                             </div>
-
-                            <!-- Input da senha -->
+                            
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating">Senha</label>
                                 <input name="senha_usuario" type="password" class="form-control">
                             </div>
 
-                            <!-- Redirecionamento para página de Recovery -->
                             <div class="input-senha form-group">
                                 <a href="recovery-email.php">Esqueceu sua senha?</a>
                             </div>
 
-                            <!-- Botão para acessar o formulário de postagens -->
                             <div class="form-group bmd-form-group">
-                                <button type="submit" class="btn-cadastrar btn">Entrar</button>
+                                <button type="submit" class="btn-register btn">Entrar</button>
                             </div>
 
-                            <!-- Redirecionamento para página de Cadastros de Usuários -->
                             <div class="form-group">                                
                                 <div class="conta">
                                     <p>Não possui conta ainda? <a href="cadastrar.php"> Cadastrar-se</a></p>
@@ -72,6 +65,7 @@
                             </div>
 
                         </form>
+                        
                     </div>
                 </div>
 
