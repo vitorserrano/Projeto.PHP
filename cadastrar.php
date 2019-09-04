@@ -5,12 +5,9 @@
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <meta http-equiv="X-UA-Compatible" content="ie=edge">
-
-        <!-- CSS geral da aplicação -->
+        
         <link rel="stylesheet" href="./asserts/css/style.css">
-        <!-- Link para os ícones do Font-Awesome -->
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
-        <!-- Link para o Bootstrap Material Design -->
+        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">        
         <link rel="stylesheet" href="asserts/css/bootstrap-material-design.min.css">
 
         <title>Projeto</title>
@@ -101,13 +98,9 @@
             </div>
         </div>
 
-        <!-- JQuery -->
         <script src="asserts/js/jquery-3.4.1.min.js"></script>
-        <!-- Popper.js -->
-        <script src="asserts/js/popper.js"></script>
-        <!-- Script do Bootstrap Material Design -->
-        <script src="asserts/js/bootstrap-material-design.js"></script>
-        <!-- Função para a "animação" dos input -->
+        <script src="asserts/js/popper.js"></script>        
+        <script src="asserts/js/bootstrap-material-design.js"></script>        
         <script src="asserts/js/meterial.js"></script>
 
     </body>

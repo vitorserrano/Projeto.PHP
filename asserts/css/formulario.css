@@ -45,6 +45,13 @@
 .dropdown-menu .dropdown-item {
     color: #24292e !important;
     font-weight: 400 !important;
+    letter-spacing: -.5px !important;    
+}
+
+.dropdown-menu .dropdown-item:hover {
+    color: #ffffff !important;
+    background: #0366d6;
+    font-weight: 400 !important;
     letter-spacing: -.5px !important;
 }
 
