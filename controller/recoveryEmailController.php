@@ -3,7 +3,6 @@
 require("../config/conexao.php");
 
 $email = $_POST['email_usuario'];
-$senha = $_POST['senha_usuario'];
 $id_us = $_POST['id_usuario'];
 
 $consultaEmail = ("SELECT id_usuario, email_usuario FROM `usuario` WHERE email_usuario = :email");

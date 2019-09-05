@@ -11,19 +11,19 @@ $dados = array(
 );
 
 if (trim(empty($dados['titulo']))) {
-  header('location: ../editarPostagem.php?id=' . $dados['id_postagem'] . '&nome=false');
+  header('location: ../editarPostagem.php?id=' . $dados['id_postagem'] . '&titulo=false');
   exit;
 }
 if (trim(empty($dados['resumo']))) {
-  header('location: ../editarPostagem.php?id=' . $dados['id_postagem'] . '&email=false');
+  header('location: ../editarPostagem.php?id=' . $dados['id_postagem'] . '&resumo=false');
   exit;
 }
 if (trim(empty($dados['conteudo']))) {
-  header('location: ../editarPostagem.php?id=' . $dados['id_postagem'] . '&senha=false');
+  header('location: ../editarPostagem.php?id=' . $dados['id_postagem'] . '&conteudo=false');
   exit;
 }
 if (trim(empty($dados['urlImg']))) {
-  header('location: ../editarPostagem.php?id=' . $dados['id_postagem'] . '&senha=false');
+  header('location: ../editarPostagem.php?id=' . $dados['id_postagem'] . '&urlImg=false');
   exit;
 }
 

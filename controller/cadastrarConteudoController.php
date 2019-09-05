@@ -73,6 +73,3 @@ if ($retorno > 0) {
 
 };
 
-
-$conexao = new Db();
-$conexao->connection();

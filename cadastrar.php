@@ -37,11 +37,13 @@
                         <div class="form-group bmd-form-group">
                             <label class="bmd-label-floating">Nome</label>
                             <input name="nome_usuario" type="text" class="form-control">
+                            <small class="form-text text-muted">Exemplo: Vitor</small>
                         </div>
 
                         <div class="form-group bmd-form-group">
                             <label class="bmd-label-floating">E-mail</label>
                             <input name="email_usuario" type="email" class="form-control">
+                            <small class="form-text text-muted">Exemplo: teste@gmail.com</small>
                         </div>
 
                         <div class="form-group bmd-form-group">

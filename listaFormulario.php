@@ -14,6 +14,7 @@
                     <div class="row">
                         <div class="col-md-8">
                             <input type="text" class="form-control" name="pesquisa">
+                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
                         </div>
                         <div class="col-md-4">
                             <button class="btn btn-secondary" type="submit"> <i class="fa fa-search"></i> PESQUISAR</button>
@@ -27,7 +28,6 @@
 
             <div class="formulario form-row py-2">
                 <?php
-
                 $sql = ("SELECT 
                             postagem.*, 
                             usuario.nome_usuario 
@@ -39,15 +39,12 @@
                             usuario.id_usuario = postagem.autor_postagem 
                         WHERE 
                             (1 = 1) ");
-
                 if (isset($_GET['pesquisa'])) {
                     $sql .= (" AND postagem.titulo_postagem LIKE " . "'%" . $_GET['pesquisa'] . "%'");
                 }
-
                 $stmt = Db::connection()->prepare($sql);
                 $stmt->execute();
                 $postagens = $stmt->fetchAll(PDO::FETCH_ASSOC);
-
                 ?>
                 <table class="table table-responsive-lg table-hover ">
                     <thead>
@@ -68,7 +65,7 @@
                                 <td><?php echo $postagem['titulo_postagem']; ?></td>
                                 <td><?php echo $postagem['conteudo_postagem']; ?></td>
                                 <td><?php echo $postagem['data_postagem']; ?></td>
-                                
+
                                 <td>
                                     <div class="modal fade" id="_postagem<?php echo $postagem['id_postagem']; ?>" tabindex="-1" role="dialog" aria-labelledby="_postagem<?php echo $postagem['id_postagem']; ?>" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
