@@ -1,102 +1,104 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include_once("includes/header.php"); ?>
+<?php include_once("includes/nav.php"); ?>
 
-    <?php session_start(); ?>
+<div class="container-fluid">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        
-        <link rel="stylesheet" href="./asserts/css/style.css">
-        <link rel="stylesheet" href="asserts/css/formulario.css">        
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">    
-        <link rel="stylesheet" href="asserts/css/bootstrap-material-design.min.css">        
+    <div class="container mt-4">
 
-        <title>Projeto.PHP</title>
-    </head>
-
-    <body>
-        <div class="container-fluid">
-
-            <nav class="navbar navbar-expand-lg navbar-dark">
-                <i class="fa fa-rebel"></i> <a class="navbar-brand" id="logo" href="home.php">Projeto.PHP</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                          <span class="navbar-toggler-icon"></span>
-                        </button>
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                              Postagem
-                            </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="formulario.php">Cadastrar Postagem</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="listaFormulario.php">Postagens Cadastradas</a>
-                            </div>
-                        </li>
-                    </ul>
-                    <span class="navbar-text">
-                        <a class="nav-link " href="#"><i class="fa fa-user-circle"></i><?php echo $_SESSION['id_nome']; ?> <span class="sr-only">(current)</span></a>
-                    </span>
-                </div>
-            </nav>
-
-            <div class="container mt-4">
-
-                <div class="form-row">
-                    <div class="header-formulario col-md-12">
-                        <h1>Postagens Cadastradas</h1>
-                    </div>
-                </div>
-
-                <form method="POST" action="controller/cadastrarConteudoController.php">
-
-                    <div class="formulario form-row py-2">
-
-                        <table class="table table-hover">
-                            <thead>
-                                <tr>
-                                    <th scope="col">Código</th>
-                                    <th scope="col">Título</th>
-                                    <th scope="col">Data de Criação</th>
-                                    <th scope="col">Autor</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <th scope="row">1</th>
-                                    <td>Mark</td>
-                                    <td>Otto</td>
-                                    <td>@mdo</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">2</th>
-                                    <td>Jacob</td>
-                                    <td>Thornton</td>
-                                    <td>@fat</td>
-                                </tr>
-                                <tr>
-                                    <th scope="row">3</th>
-                                    <td colspan="2">Larry the Bird</td>
-                                    <td>@twitter</td>
-                                </tr>
-                            </tbody>
-                        </table>
-
-                    </div>
-
+        <div class="form-row">
+            <div class="header-formulario col-md-6">
+                <h1>Postagens Cadastradas</h1>
+            </div>
+            <div class="header-formulario col-md-6">
+                <form>
+                    <input type="text" class="form-control" name="pesquisa">
+                    <button class="btn btn-primary" type="submit">PESQUISAR</button>
                 </form>
-
             </div>
         </div>
-        
-        <script src="asserts/js/jquery-3.4.1.min.js"></script>        
-        <script src="asserts/js/popper.js"></script>        
-        <script src="asserts/js/bootstrap-material-design.js"></script>        
-        <script src="asserts/js/meterial.js"></script>
 
-    </body>
+        <form method="POST" action="controller/cadastrarConteudoController.php">
 
-</html>
+            <div class="formulario form-row py-2">
+                <?php
+
+                $sql = ("SELECT 
+                            postagem.*, 
+                            usuario.nome_usuario 
+                        FROM 
+                            `postagem` 
+                        INNER JOIN 
+                            usuario 
+                        ON 
+                            usuario.id_usuario = postagem.autor_postagem 
+                        WHERE 
+                            (1 = 1) ");
+
+                if (isset($_GET['pesquisa'])) {
+                    $sql .= (" AND postagem.titulo_postagem LIKE " . "'%" . $_GET['pesquisa'] . "%'");
+                }
+
+                $stmt = Db::connection()->prepare($sql);
+                $stmt->execute();
+                $postagens = $stmt->fetchAll(PDO::FETCH_ASSOC);
+
+                ?>
+                <table class="table table-hover table-sm">
+                    <thead>
+                        <tr>
+                            <th scope="col">Código</th>
+                            <th scope="col">Autor</th>
+                            <th scope="col">Título</th>
+                            <th scope="col">Conteúdo</th>
+                            <th scope="col">Data de Criação</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <?php foreach ($postagens as $postagem) { ?>
+                            <tr>
+                                <th scope="row"><?php echo $postagem['id_postagem']; ?></th>
+                                <td><?php echo $postagem['nome_usuario']; ?></td>
+                                <td><?php echo $postagem['titulo_postagem']; ?></td>
+                                <td><?php echo $postagem['conteudo_postagem']; ?></td>
+                                <td><?php echo $postagem['data_postagem']; ?></td>
+                                <td>
+
+                                    <div class="modal fade" id="_postagem<?php echo $postagem['id_postagem']; ?>" tabindex="-1" role="dialog" aria-labelledby="_postagem<?php echo $postagem['id_postagem']; ?>" aria-hidden="true">
+                                        <div class="modal-dialog" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h5 class="modal-title" id="_postagem<?php echo $postagem['id_postagem']; ?>"><?php echo $postagem['titulo_postagem']; ?></h5>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <p> <a target="_blank" href="<?php echo $postagem['url_postagem']; ?>"><?php echo $postagem['url_postagem']; ?></a> </p>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">FECHAR</button>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#_postagem<?php echo $postagem['id_postagem']; ?>">
+                                        URL
+                                    </button>
+
+                                    <a class="btn btn-info" href="editarPostagem.php?id=<?php echo $postagem['id_postagem']; ?>">EDITAR</a>
+                                    <a class="btn btn-danger" href="controller/apagarPostagem.php?id=<?php echo $postagem['id_postagem']; ?>">EXCLUIR</a>
+
+                                </td>
+                            </tr>
+                        <?php } ?>
+                    </tbody>
+                </table>
+
+            </div>
+
+        </form>
+
+    </div>
+</div>
+<?php include_once("includes/footer.php"); ?>

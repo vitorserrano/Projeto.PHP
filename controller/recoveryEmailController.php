@@ -16,7 +16,7 @@ $retorno = $stmt->rowCount();
 
 if($retorno > 0)
 {
-  header('location: ../recovery-senha.php');  
+  header('location: ../recovery-senha.php?id=' . $id_user);  
 } else {
   header('location: ../recovery-email.php?erro=true');  
 };

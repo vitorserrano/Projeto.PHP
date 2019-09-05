@@ -35,6 +35,7 @@
                     <div class="jumbotron py-1">
                     
                         <form method="POST" action="controller/recoverySenhaController.php">
+                        <input name="id_usuario" value="<?php echo $_GET['id']; ?>" type="hidden" class="form-control">
 
                             <div class="form-group bmd-form-group">
                                 <label class="bmd-label-floating">Nova Senha</label>

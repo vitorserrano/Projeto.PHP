@@ -14,6 +14,7 @@ if (trim(empty($dados['titulo']))) {
     header('location: ../formulario.php?titulo=false');
     exit;
 }
+
 if (trim(empty($dados['resumo']))) {
     header('location: ../formulario.php?resumo=false');
     exit;
@@ -41,18 +42,37 @@ $stmt->execute();
 $retorno = $stmt->rowCount();
 
 if ($retorno > 0) {
-    //  header('location: ../formulario.php?erro=true');     
-    echo 'texte';
+     header('location: ../formulario.php?erro=true');     
     exit;
 } else {
-    $criarPostagem = ('INSERT INTO `postagem` (titulo_postagem, resumo_postagem, conteudo_postagem, url_postagem, autor_postagem) VALUES (:titulo, :resumo, :conteudo, :urlimg, :autor)');
+    date_default_timezone_set('America/Sao_Paulo');
+    $hoje = date('Y-m-d');
+
+    $criarPostagem = ("INSERT INTO `postagem` 
+                        (`titulo_postagem`, `resumo_postagem`, `conteudo_postagem`, `url_postagem`, `data_postagem`, `autor_postagem`) 
+                            VALUES 
+                        (:titulo, :resumo, :conteudo, :urlimg, :data_postagem, :autor)");
+    
     $exec = Db::connection()->prepare($criarPostagem);
-    $exec->bindValue(":titulo", $dados['email']);
+    $exec->bindValue(":titulo", $dados['titulo']);
     $exec->bindValue(":resumo", $dados['resumo']);
     $exec->bindValue(":conteudo", $dados['conteudo']);
-    $exec->bindValue(":urligm", $dados['urligm']);
+    $exec->bindValue(":urlimg", $dados['urlImg']);
+    $exec->bindValue(":data_postagem", $hoje);
     $exec->bindValue(":autor", $dados['autor']);
-    header('location: ../login.php?success=true');
+    
+    $r = $exec->execute();
+    
+    if($r){
+        header('location: ../listaFormulario.php?success=true');
+        exit;
+    }else{
+        header('location: ../login.php?success=true');
+        exit;
+    }
 
-    exit;
 };
+
+
+$conexao = new Db();
+$conexao->connection();

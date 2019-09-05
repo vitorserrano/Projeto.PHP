@@ -42,11 +42,13 @@ if ($retorno > 0) {
   
   
   $r = $exec->execute();
-
+  
   if($r ){
     header('location: ../login.php?success=true');  
+    exit;
   } else {
     header('location: ../cadastrar.php?erro=true');
+    exit;
   }
     
 };

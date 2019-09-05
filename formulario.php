@@ -1,102 +1,51 @@
-<!DOCTYPE html>
-<html lang="en">
+<?php include_once("includes/header.php"); ?>
+<?php include_once("includes/nav.php"); ?>
 
-    <?php session_start(); ?>
+<div class="container-fluid">
 
-    <head>
-        <meta charset="UTF-8">
-        <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <meta http-equiv="X-UA-Compatible" content="ie=edge">
-        
-        <link rel="stylesheet" href="./asserts/css/style.css">
-        <link rel="stylesheet" href="asserts/css/formulario.css">        
-        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">        
-        <link rel="stylesheet" href="asserts/css/bootstrap-material-design.min.css">
+    <div class="container mt-4">
 
-        <title>Projeto</title>
-    </head>
-
-    <body>
-
-        <div class="container-fluid">
-
-            <nav class="navbar navbar-expand-lg navbar-dark">
-                <i class="fa fa-rebel"></i> <a class="navbar-brand" id="logo" href="home.php">Projeto.PHP</a>
-                <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarText" aria-controls="navbarText" aria-expanded="false" aria-label="Toggle navigation">
-                                  <span class="navbar-toggler-icon"></span>
-                                </button>
-                <div class="collapse navbar-collapse" id="navbarText">
-                    <ul class="navbar-nav mr-auto">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                                      Postagem
-                                    </a>
-                            <div class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                <a class="dropdown-item" href="formulario.php">Cadastrar Postagem</a>
-                                <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="listaFormulario.php">Postagens Cadastradas</a>
-                            </div>
-                        </li>
-                    </ul>
-                    <span class="navbar-text">
-                       <a class="nav-link " href="#"><i class="fa fa-user-circle"></i><?php echo $_SESSION['id_nome']; ?> <span class="sr-only">(current)</span></a>
-                    </span>
-                </div>
-            </nav>
-
-            <div class="container mt-4">
-
-                <div class="form-row">
-                    <div class="header-formulario col-md-12">
-                        <h1>Cadastrar Postagem</h1>
-                    </div>
-                </div>
-
-                <form method="POST" action="controller/cadastrarConteudoController.php">
-
-                    <div class="formulario form-row py-2">
-
-                        <div class="form-group bmd-form-group col-md-12">
-                            <label class="bmd-label-floating">Título</label>
-                            <input name="titulo_postagem" type="text" class="form-control">
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <label class="bmd-label-floating">Resumo</label>
-                            <textarea name="resumo_postagem" type="text" class="form-control" rows="3"></textarea>
-                        </div>
-
-                        <div class="form-group col-md-6">
-                            <label class="bmd-label-floating">Conteúdo do Post</label>
-                            <textarea name="conteudo_postagem" type="text" class="form-control" rows="3"></textarea>
-                        </div>
-
-                        <div class="form-group bmd-form-group col-md-6">
-                            <label class="bmd-label-floating">Url da Imagem</label>
-                            <input name="url_postagem" type="text" class="form-control">
-                        </div>
-
-                        <div class="form-group bmd-form-group col-md-6">
-                            <label class="bmd-label-floating">Autor</label>
-                            <input name="autor_postagem" type="text" class="form-control">
-                        </div>
-                        <div class="form-group bmd-form-group col-md-12 float-right">
-                            <button type="submit" class="btn-register btn float-right">Enviar Conteudo</button>
-                            <button type="reset" class="btn-clear-form btn float-right">Limpar Dados</button>
-                        </div>
-
-                    </div>
-
-                </form>
-
+        <div class="form-row">
+            <div class="header-formulario col-md-12">
+                <h1>Cadastrar Postagem</h1>
             </div>
         </div>
-        
-        <script src="asserts/js/jquery-3.4.1.min.js"></script>        
-        <script src="asserts/js/popper.js"></script>        
-        <script src="asserts/js/bootstrap-material-design.js"></script>        
-        <script src="asserts/js/meterial.js"></script>
 
-    </body>
+        <form method="POST" action="controller/cadastrarConteudoController.php">
+            <input name="autor_postagem" type="hidden" value="<?php echo $_SESSION['id_usuario']; ?>" class="form-control">
 
-</html>
+            <div class="formulario form-row py-2">
+
+                <div class="form-group bmd-form-group col-md-12">
+                    <label class="bmd-label-floating">Título</label>
+                    <input name="titulo_postagem" type="text" class="form-control">
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label class="bmd-label-floating">Resumo</label>
+                    <textarea name="resumo_postagem" type="text" class="form-control" rows="3"></textarea>
+                </div>
+
+                <div class="form-group col-md-6">
+                    <label class="bmd-label-floating">Conteúdo do Post</label>
+                    <textarea name="conteudo_postagem" type="text" class="form-control" rows="3"></textarea>
+                </div>
+
+                <div class="form-group bmd-form-group col-md-6">
+                    <label class="bmd-label-floating">Url da Imagem</label>
+                    <input name="url_postagem" type="text" class="form-control">
+                </div>
+
+                <div class="form-group bmd-form-group col-md-12 float-right">
+                    <button type="submit" class="btn-register btn float-right">Enviar Conteudo</button>
+                    <button type="reset" class="btn-clear-form btn float-right">Limpar Dados</button>
+                </div>
+
+            </div>
+
+        </form>
+
+    </div>
+</div>
+
+<?php include_once("includes/footer.php"); ?>
