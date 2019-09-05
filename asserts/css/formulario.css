@@ -7,9 +7,9 @@
 }
 
 .navbar {
-    background: #0f0c29;    
-    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);    
-    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);    
+    background: #0f0c29;
+    background: -webkit-linear-gradient(to right, #24243e, #302b63, #0f0c29);
+    background: linear-gradient(to right, #24243e, #302b63, #0f0c29);
 }
 
 #logo {
@@ -42,10 +42,14 @@
     opacity: 0.9 !important;
 }
 
+.navbar-text {
+    list-style: none !important;
+}
+
 .dropdown-menu .dropdown-item {
     color: #24292e !important;
     font-weight: 400 !important;
-    letter-spacing: -.5px !important;    
+    letter-spacing: -.5px !important;
 }
 
 .dropdown-menu .dropdown-item:hover {
@@ -58,6 +62,14 @@
 .header-formulario {
     background-color: #e9eef3;
     border: 1px solid #d1d5da;
+    border-top-left-radius: 3px;
+    border-top-right-radius: 3px;
+    margin: -1px -1px 0;
+    padding: 14px;
+}
+
+.search-box {
+    background-color: #e9eef3;
     border-top-left-radius: 3px;
     border-top-right-radius: 3px;
     margin: -1px -1px 0;
@@ -88,6 +100,24 @@
     color: #586069 !important;
     font-weight: 600 !important;
     font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol !important;
+}
+
+#sair {
+    color: red !important;
+}
+
+#sair:hover {
+    color: white !important;
+}
+
+#sair .fa {
+    color: black !important;
+    font-size: 25px;
+    margin-top: 3px;
+}
+
+#sair .fa:hover {
+    color: white !important;
 }
 
 @media only screen and (max-width: 760px) {

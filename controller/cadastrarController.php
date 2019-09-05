@@ -21,9 +21,6 @@ if (trim(empty($dados['senha']))){
   exit;
 }
 
-// date_default_timezone_set('America/Sao_Paulo');
-// $hoje = date('Y-m-d');
-
 $consultaEmail = ("SELECT email_usuario FROM `usuario` WHERE email_usuario = :email");
 $stmt = Db::connection()->prepare($consultaEmail);
 $stmt->bindValue(":email", $dados['email']);

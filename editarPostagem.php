@@ -11,7 +11,7 @@
 
     <?php
 
-      $sql = ("SELECT postagem.*, usuario.nome_usuario 
+    $sql = ("SELECT postagem.*, usuario.nome_usuario 
                                   FROM `postagem` 
                                   INNER JOIN 
                                       usuario 
@@ -21,12 +21,12 @@
                                       postagem.id_postagem = :id_postagem
                                   ");
 
-      $stmt = Db::connection()->prepare($sql);
-      $stmt->bindValue(":id_postagem", $_GET['id']);
-      $stmt->execute();
-      $postagem = $stmt->fetch(PDO::FETCH_ASSOC);
- 
-?>
+    $stmt = Db::connection()->prepare($sql);
+    $stmt->bindValue(":id_postagem", $_GET['id']);
+    $stmt->execute();
+    $postagem = $stmt->fetch(PDO::FETCH_ASSOC);
+
+    ?>
 
     <form method="POST" action="controller/editarConteudoController.php">
       <input name="autor_postagem" type="hidden" value="<?php echo $_SESSION['id_usuario']; ?>" class="form-control">
@@ -55,8 +55,20 @@
         </div>
 
         <div class="form-group bmd-form-group col-md-12 float-right">
-          <button type="submit" class="btn-register btn float-right">Salvar alterações</button>
-          <button type="reset" class="btn-clear-form btn float-right">Limpar Dados</button>
+          <button type="submit" class="btn btn-success btn float-right">Salvar alterações</button>
+          <button type="reset" class="btn btn-info float-right">Limpar Dados</button>
+          <a class="btn-voltar btn" href="listaFormulario.php">Voltar</a>
+        </div>
+
+        <div class="form-group bmd-form-group col-md-12">
+          <?php if (isset($_GET['success'])) { ?>
+            <div class="alert alert-success alert-dismissible fade show" role="alert">
+              <strong>Postagem</strong> alterada com sucesso!
+              <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+                <span aria-hidden="true">&times;</span>
+              </button>
+            </div>
+          <?php } ?>
         </div>
 
       </div>

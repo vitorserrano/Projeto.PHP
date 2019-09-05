@@ -64,7 +64,7 @@ if ($retorno > 0) {
     $r = $exec->execute();
     
     if($r){
-        header('location: ../listaFormulario.php?success=true');
+        header('location: ../formulario.php?success=true');
         exit;
     }else{
         header('location: ../login.php?success=true');

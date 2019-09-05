@@ -1,83 +1,83 @@
-body {
-    background: #f9f9f9;
-    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol !important;
-}
-
-a {
-    color: #0366d6 !important;
-}
-
-a:hover {
-    text-decoration: none !important;
-}
-
-.logotipo .fa{
-    font-size: 80px !important;    
-}
-
-.container {    
-    margin: 0 auto;
-}
-
-.jumbotron {
-    background: white !important;
-    border-radius: 5px;
-    border: 1px solid #d8dee2;
-}
-
-.titulo h1 {
-    color: #24292e;
-    font-size: 24px;
-    font-weight: 300;
-    letter-spacing: -.5px;
-}
-
-[class*=" bmd-label"],
-[class^="bmd-label"] {
-    color: #586069 !important;
-}
-
-.bmd-form-group .checkbox label,
-.bmd-form-group .radio label,
-.bmd-form-group label {
-    font-weight: 600 !important;    
-}
-
-.custom-file-control,
-.form-control,
-.is-focused .custom-file-control,
-.is-focused .form-control {
-    background-image: linear-gradient(0deg, #0366d6 2px, #00968800 0), linear-gradient(0deg, #00000042 1px, transparent 0) !important;
-}
-
-.btn,
-.custom-file-control:before {
-    padding: .7rem 1rem !important;
-}
-
-.btn:hover {
-    opacity: 0.9 !important;
-    color: white !important;
-}
-
-.btn-register {
-    background-color: #269f42 !important;
-    width: 300px;
-    height: 45px;
-    color: white !important;
-    border-radius: .25em !important;
-    font-weight: 501 !important;
-}
-
-.btn-clear {
-    width: 150px;
-    background: #1074e7 !important;
-    height: 45px;
-    color: white !important;
-}
-
-@media only screen and (max-width: 760px) {
-    .btn {
-        width: 100% !important;
+    body {
+        background: #f9f9f9;
+        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Helvetica, Arial, sans-serif, Apple Color Emoji, Segoe UI Emoji, Segoe UI Symbol !important;
     }
-}
+    
+    a {
+        color: #0366d6 !important;
+    }
+    
+    a:hover {
+        text-decoration: none !important;
+    }
+    
+    .logotipo .fa {
+        font-size: 80px !important;
+    }
+    
+    .container {
+        margin: 0 auto;
+    }
+    
+    .jumbotron {
+        background: white !important;
+        border-radius: 5px;
+        border: 1px solid #d8dee2;
+    }
+    
+    .titulo h1 {
+        color: #24292e;
+        font-size: 24px;
+        font-weight: 300;
+        letter-spacing: -.5px;
+    }
+    
+    [class*=" bmd-label"],
+    [class^="bmd-label"] {
+        color: #586069 !important;
+    }
+    
+    .bmd-form-group .checkbox label,
+    .bmd-form-group .radio label,
+    .bmd-form-group label {
+        font-weight: 600 !important;
+    }
+    
+    .custom-file-control,
+    .form-control,
+    .is-focused .custom-file-control,
+    .is-focused .form-control {
+        background-image: linear-gradient(0deg, #0366d6 2px, #00968800 0), linear-gradient(0deg, #00000042 1px, transparent 0) !important;
+    }
+    
+    .btn,
+    .custom-file-control:before {
+        padding: .7rem 1rem !important;
+    }
+    
+    .btn:hover {
+        opacity: 0.9 !important;
+    }
+    
+    .btn-register {
+        background-color: #269f42 !important;
+        width: 300px;
+        height: 45px;
+        color: white !important;
+        border-radius: .25em !important;
+        font-weight: 501 !important;
+    }
+    
+    .btn-voltar {
+        color: #f44336 !important;
+    }
+    
+    .btn-delete {
+        color: #f44336 !important;
+    }
+    
+    @media only screen and (max-width: 760px) {
+        .btn {
+            width: 100% !important;
+        }
+    }

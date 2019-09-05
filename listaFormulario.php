@@ -9,10 +9,16 @@
             <div class="header-formulario col-md-6">
                 <h1>Postagens Cadastradas</h1>
             </div>
-            <div class="header-formulario col-md-6">
+            <div class="search-box col-md-6">
                 <form>
-                    <input type="text" class="form-control" name="pesquisa">
-                    <button class="btn btn-primary" type="submit">PESQUISAR</button>
+                    <div class="row">
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" name="pesquisa">
+                        </div>
+                        <div class="col-md-4">
+                            <button class="btn btn-secondary" type="submit"> <i class="fa fa-search"></i> PESQUISAR</button>
+                        </div>
+                    </div>
                 </form>
             </div>
         </div>
@@ -43,26 +49,27 @@
                 $postagens = $stmt->fetchAll(PDO::FETCH_ASSOC);
 
                 ?>
-                <table class="table table-hover table-sm">
+                <table class="table table-responsive-lg table-hover ">
                     <thead>
                         <tr>
                             <th scope="col">Código</th>
                             <th scope="col">Autor</th>
                             <th scope="col">Título</th>
                             <th scope="col">Conteúdo</th>
-                            <th scope="col">Data de Criação</th>
+                            <th scope="col">Criação</th>
                         </tr>
                     </thead>
                     <tbody>
+
                         <?php foreach ($postagens as $postagem) { ?>
                             <tr>
-                                <th scope="row"><?php echo $postagem['id_postagem']; ?></th>
+                                <th scope="row"> <?php echo $postagem['id_postagem']; ?> </th>
                                 <td><?php echo $postagem['nome_usuario']; ?></td>
                                 <td><?php echo $postagem['titulo_postagem']; ?></td>
                                 <td><?php echo $postagem['conteudo_postagem']; ?></td>
                                 <td><?php echo $postagem['data_postagem']; ?></td>
+                                
                                 <td>
-
                                     <div class="modal fade" id="_postagem<?php echo $postagem['id_postagem']; ?>" tabindex="-1" role="dialog" aria-labelledby="_postagem<?php echo $postagem['id_postagem']; ?>" aria-hidden="true">
                                         <div class="modal-dialog" role="document">
                                             <div class="modal-content">
@@ -73,7 +80,9 @@
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <p> <a target="_blank" href="<?php echo $postagem['url_postagem']; ?>"><?php echo $postagem['url_postagem']; ?></a> </p>
+                                                    <p>Conteúdo: <?php echo $postagem['resumo_postagem']; ?></a> </p>
+                                                    <p>Resumo: <?php echo $postagem['conteudo_postagem']; ?></a> </p>
+                                                    <p>URL da Imagem: <a target="_blank" href="<?php echo $postagem['url_postagem']; ?>"><?php echo $postagem['url_postagem']; ?></a> </p>
                                                 </div>
                                                 <div class="modal-footer">
                                                     <button type="button" class="btn btn-danger" data-dismiss="modal">FECHAR</button>
@@ -82,16 +91,16 @@
                                         </div>
                                     </div>
 
-                                    <button type="button" class="btn btn-primary" data-toggle="modal" data-target="#_postagem<?php echo $postagem['id_postagem']; ?>">
-                                        URL
-                                    </button>
-
-                                    <a class="btn btn-info" href="editarPostagem.php?id=<?php echo $postagem['id_postagem']; ?>">EDITAR</a>
-                                    <a class="btn btn-danger" href="controller/apagarPostagem.php?id=<?php echo $postagem['id_postagem']; ?>">EXCLUIR</a>
+                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#_postagem<?php echo $postagem['id_postagem']; ?>">Visualizar</button>
+                                    <a type="button" class="btn btn-info" href="editarPostagem.php?id=<?php echo $postagem['id_postagem']; ?>"> Editar </a>
+                                    <a class="btn-delete btn" href="controller/apagarPostagem.php?id=<?php echo $postagem['id_postagem']; ?>"> Excluir </a>
 
                                 </td>
+
                             </tr>
+
                         <?php } ?>
+
                     </tbody>
                 </table>
 
