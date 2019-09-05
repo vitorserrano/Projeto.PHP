@@ -14,7 +14,7 @@
                     <div class="row">
                         <div class="col-md-8">
                             <input type="text" class="form-control" name="pesquisa">
-                            <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
+                            <small class="form-text text-muted">Pesquisar apenas por títulos já cadastrados.</small>
                         </div>
                         <div class="col-md-4">
                             <button class="btn btn-secondary" type="submit"> <i class="fa fa-search"></i> PESQUISAR</button>
