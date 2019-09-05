@@ -72,8 +72,8 @@
         color: #f44336 !important;
     }
     
-    .btn-delete {
-        color: #f44336 !important;
+    .btn-confirmar {
+        color: #4caf50 !important;
     }
     
     @media only screen and (max-width: 760px) {

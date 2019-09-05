@@ -68,21 +68,26 @@
 
                                 <td>
                                     <div class="modal fade" id="_postagem<?php echo $postagem['id_postagem']; ?>" tabindex="-1" role="dialog" aria-labelledby="_postagem<?php echo $postagem['id_postagem']; ?>" aria-hidden="true">
-                                        <div class="modal-dialog" role="document">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
                                                 <div class="modal-header">
-                                                    <h5 class="modal-title" id="_postagem<?php echo $postagem['id_postagem']; ?>"><?php echo $postagem['titulo_postagem']; ?></h5>
+                                                    <h4 class="modal-title" id="_postagem<?php echo $postagem['id_postagem']; ?>"> <i id="icon-modal" class="fa fa-eye"></i> <?php echo $postagem['titulo_postagem']; ?></h4>
                                                     <button type="button" class="close" data-dismiss="modal" aria-label="Close">
                                                         <span aria-hidden="true">&times;</span>
                                                     </button>
                                                 </div>
                                                 <div class="modal-body">
-                                                    <p>Conteúdo: <?php echo $postagem['resumo_postagem']; ?></a> </p>
-                                                    <p>Resumo: <?php echo $postagem['conteudo_postagem']; ?></a> </p>
-                                                    <p>URL da Imagem: <a target="_blank" href="<?php echo $postagem['url_postagem']; ?>"><?php echo $postagem['url_postagem']; ?></a> </p>
+                                                    <ul>
+                                                    <li><h6><strong>Código: </strong><?php echo $postagem['id_postagem']; ?></h6></li>                                                            
+                                                    <li><h6><strong>Autor:  </strong> <?php echo $postagem['nome_usuario']; ?></h6></li>                                                        
+                                                    <li><h6><strong>Resumo: </strong><?php echo $postagem['resumo_postagem']; ?></h6></li>
+                                                    <li><h6><strong>Conteúdo: </strong><?php echo $postagem['conteudo_postagem']; ?></h6></li>
+                                                    <li><h6><strong>URL da Imagem: </strong><a target="_blank" href="<?php echo $postagem['url_postagem']; ?>"><?php echo $postagem['url_postagem']; ?></a> </h6></li>
+                                                    <li><h6><strong>Data de Criação: </strong><?php echo $postagem['data_postagem']; ?></h6></li>                                                            
+                                                    </ul>
                                                 </div>
                                                 <div class="modal-footer">
-                                                    <button type="button" class="btn btn-danger" data-dismiss="modal">FECHAR</button>
+                                                    <button type="button" class="btn btn-secondaray" data-dismiss="modal">FECHAR</button>
                                                 </div>
                                             </div>
                                         </div>
@@ -90,7 +95,36 @@
 
                                     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#_postagem<?php echo $postagem['id_postagem']; ?>">Visualizar</button>
                                     <a type="button" class="btn btn-info" href="editarPostagem.php?id=<?php echo $postagem['id_postagem']; ?>"> Editar </a>
-                                    <a class="btn-delete btn" href="controller/apagarPostagem.php?id=<?php echo $postagem['id_postagem']; ?>"> Excluir </a>
+                                    <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-excluir">
+                                        Excluir
+                                    </button>
+
+                                    <!-- Modal -->
+                                    <div class="modal fade" id="modal-excluir" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+                                        <div class="modal-dialog modal-dialog-centered" role="document">
+                                            <div class="modal-content">
+                                                <div class="modal-header">
+                                                    <h4 class="modal-title" id="exampleModalLongTitle"> <i id="icon-modal" class="fa fa-trash"></i> Excluir Postagem </h4>
+                                                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                        <span aria-hidden="true">&times;</span>
+                                                    </button>
+                                                </div>
+                                                <div class="modal-body">
+                                                    <h5>Deseja realmente excluir esta postagem?</h5>
+                                                    <small class="form-text text-muted">* Esse processo é irreversivel.</small>
+                                                </div>
+                                                <div class="modal-footer">
+                                                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Fechar</button>
+                                                    <a class="btn-confirmar btn" href="controller/apagarPostagem.php?id=<?php echo $postagem['id_postagem']; ?>"> Confirmar </a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+
+
+
+
+
 
                                 </td>
 
