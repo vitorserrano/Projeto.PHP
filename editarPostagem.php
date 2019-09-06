@@ -4,7 +4,7 @@
   <div class="container mt-4">
     <div class="form-row">
       <div class="header-formulario col-md-12">
-        <h1>Cadastrar Postagem</h1>
+        <h1> <i id="icon-header-formulario" class="fa fa-edit"></i> Editar Postagem</h1>
       </div>
     </div>
 

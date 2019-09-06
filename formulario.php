@@ -5,7 +5,7 @@
     <div class="container mt-4">
         <div class="form-row">
             <div class="header-formulario col-md-12">
-                <h1>Cadastrar Postagem</h1>
+                <h1> <i id="icon-header-formulario" class="fa fa-plus"></i> Cadastrar Postagem</h1>
             </div>
         </div>
 
@@ -56,7 +56,7 @@
                 </div>
                 <div class="form-group col-md-12">
                     <label class="bmd-label-floating">Título</label>
-                    <input name="titulo_postagem" id="titulo_postagem" type="text" class="form-control">                    
+                    <input name="titulo_postagem" id="titulo_postagem" type="text" class="form-control">                                        
                 </div>
                 <div class="form-group col-md-6">
                     <label class="bmd-label-floating">Resumo</label>

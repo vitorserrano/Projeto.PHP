@@ -7,7 +7,7 @@
 
         <div class="form-row">
             <div class="header-formulario col-md-6">
-                <h1>Postagens Cadastradas</h1>
+                <h1> <i id="icon-header-formulario" class="fa fa-list"></i> Postagens Cadastradas</h1>
             </div>
             <div class="search-box col-md-6">
                 <form>
@@ -26,7 +26,7 @@
 
         <form method="POST" action="controller/cadastrarConteudoController.php">
             <div class="formulario form-row py-2">
-                
+
                 <?php
                 $sql = ("SELECT 
                             postagem.*, 
@@ -52,9 +52,10 @@
                         <tr>
                             <th scope="col">Código</th>
                             <th scope="col">Autor</th>
-                            <th scope="col">Título</th>
-                            <th scope="col">Conteúdo</th>
+                            <th id="titulo" scope="col">Título</th>
+                            <th id="conteudo" scope="col">Conteúdo</th>
                             <th scope="col">Criação</th>
+                            <th scope="col">Ações</th>
                         </tr>
                     </thead>
                     <tbody>
@@ -62,9 +63,9 @@
                         <?php foreach ($postagens as $postagem) { ?>
                             <tr>
                                 <th scope="row"> <?php echo $postagem['id_postagem']; ?> </th>
-                                <td><?php echo $postagem['nome_usuario']; ?></td>
-                                <td><?php echo $postagem['titulo_postagem']; ?></td>
-                                <td><?php echo $postagem['conteudo_postagem']; ?></td>
+                                <td ><?php echo $postagem['nome_usuario']; ?></td>
+                                <td id="titulo"><?php echo $postagem['titulo_postagem']; ?></td>
+                                <td id="conteudo"><?php echo $postagem['conteudo_postagem']; ?></td>
                                 <td><?php echo $postagem['data_postagem']; ?></td>
 
                                 <td>
@@ -105,11 +106,11 @@
                                             </div>
                                         </div>
                                     </div>
-                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#_postagem<?php echo $postagem['id_postagem']; ?>">Visualizar</button>
-                                    <a class="btn btn-secondary" href="editarPostagem.php?id=<?php echo $postagem['id_postagem']; ?>"> Editar </a>                                    
+                                    <button type="button" class="btn btn-info" data-toggle="modal" data-target="#_postagem<?php echo $postagem['id_postagem']; ?>"><i id="icon-listaFormulario" class="fa fa-eye"></i> </button>
+                                    <a class="btn btn-secondary" href="editarPostagem.php?id=<?php echo $postagem['id_postagem']; ?>"> <i id="icon-listaFormulario" class="fa fa-pencil"></i></a>
                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-excluir">
-                                        Excluir
-                                    </button>                                    
+                                        <i id="icon-listaFormulario" class="fa fa-trash"></i>
+                                    </button>
                                     <div class="modal fade" id="modal-excluir" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
@@ -132,13 +133,13 @@
                                     </div>
                                 </td>
                             </tr>
-                            
-                            <?php } ?>
-                            <?php if (count($postagens) === 0) { ?>
-                                <tr>
-                                    <td style="text-align: center;" colspan="5">SEM RESULTADOS</td>
-                                </tr>
-                            <?php } ?>
+
+                        <?php } ?>
+                        <?php if (count($postagens) === 0) { ?>
+                            <tr>
+                                <td style="text-align: center;" colspan="5">SEM RESULTADOS</td>
+                            </tr>
+                        <?php } ?>
 
                     </tbody>
                 </table>

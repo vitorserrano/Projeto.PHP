@@ -13,8 +13,9 @@
     <link rel="stylesheet" href="./asserts/css/formulario.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.css">
     <link rel="stylesheet" href="./asserts/css/bootstrap-material-design.min.css">
+    <link rel="shortcut icon" href="./img/favicon.ico">
 
-    <title>Projeto</title>
+    <title>Projeto.PHP</title>
 </head>
 
 <body>

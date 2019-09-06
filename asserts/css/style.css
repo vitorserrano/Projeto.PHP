@@ -74,6 +74,8 @@
     
     .btn-confirmar {
         color: #4caf50 !important;
+<<<<<<< HEAD
+=======
     }
 
     .btn-editar{
@@ -82,6 +84,7 @@
 
     .error{
         color: red !important;
+>>>>>>> a1793270ecb5bc1883912750da790c903c4cd4b8
     }
     
     @media only screen and (max-width: 760px) {
