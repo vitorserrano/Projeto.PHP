@@ -25,8 +25,8 @@
         </div>
 
         <form method="POST" action="controller/cadastrarConteudoController.php">
-
             <div class="formulario form-row py-2">
+                
                 <?php
                 $sql = ("SELECT 
                             postagem.*, 
@@ -46,6 +46,7 @@
                 $stmt->execute();
                 $postagens = $stmt->fetchAll(PDO::FETCH_ASSOC);
                 ?>
+
                 <table class="table table-responsive-lg table-hover ">
                     <thead>
                         <tr>
@@ -78,12 +79,24 @@
                                                 </div>
                                                 <div class="modal-body">
                                                     <ul>
-                                                    <li><h6><strong>Código: </strong><?php echo $postagem['id_postagem']; ?></h6></li>                                                            
-                                                    <li><h6><strong>Autor:  </strong> <?php echo $postagem['nome_usuario']; ?></h6></li>                                                        
-                                                    <li><h6><strong>Resumo: </strong><?php echo $postagem['resumo_postagem']; ?></h6></li>
-                                                    <li><h6><strong>Conteúdo: </strong><?php echo $postagem['conteudo_postagem']; ?></h6></li>
-                                                    <li><h6><strong>URL da Imagem: </strong><a target="_blank" href="<?php echo $postagem['url_postagem']; ?>"><?php echo $postagem['url_postagem']; ?></a> </h6></li>
-                                                    <li><h6><strong>Data de Criação: </strong><?php echo $postagem['data_postagem']; ?></h6></li>                                                            
+                                                        <li>
+                                                            <h6><strong>Código: </strong><?php echo $postagem['id_postagem']; ?></h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6><strong>Autor: </strong> <?php echo $postagem['nome_usuario']; ?></h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6><strong>Resumo: </strong><?php echo $postagem['resumo_postagem']; ?></h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6><strong>Conteúdo: </strong><?php echo $postagem['conteudo_postagem']; ?></h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6><strong>URL da Imagem: </strong><a target="_blank" href="<?php echo $postagem['url_postagem']; ?>"><?php echo $postagem['url_postagem']; ?></a> </h6>
+                                                        </li>
+                                                        <li>
+                                                            <h6><strong>Data de Criação: </strong><?php echo $postagem['data_postagem']; ?></h6>
+                                                        </li>
                                                     </ul>
                                                 </div>
                                                 <div class="modal-footer">
@@ -92,14 +105,11 @@
                                             </div>
                                         </div>
                                     </div>
-
                                     <button type="button" class="btn btn-info" data-toggle="modal" data-target="#_postagem<?php echo $postagem['id_postagem']; ?>">Visualizar</button>
-                                    <a type="button" class="btn btn-info" href="editarPostagem.php?id=<?php echo $postagem['id_postagem']; ?>"> Editar </a>
+                                    <a class="btn btn-secondary" href="editarPostagem.php?id=<?php echo $postagem['id_postagem']; ?>"> Editar </a>                                    
                                     <button type="button" class="btn btn-danger" data-toggle="modal" data-target="#modal-excluir">
                                         Excluir
-                                    </button>
-
-                                    <!-- Modal -->
+                                    </button>                                    
                                     <div class="modal fade" id="modal-excluir" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
                                         <div class="modal-dialog modal-dialog-centered" role="document">
                                             <div class="modal-content">
@@ -120,25 +130,21 @@
                                             </div>
                                         </div>
                                     </div>
-
-
-
-
-
-
                                 </td>
-
                             </tr>
-
-                        <?php } ?>
+                            
+                            <?php } ?>
+                            <?php if (count($postagens) === 0) { ?>
+                                <tr>
+                                    <td style="text-align: center;" colspan="5">SEM RESULTADOS</td>
+                                </tr>
+                            <?php } ?>
 
                     </tbody>
                 </table>
-
             </div>
-
         </form>
-
     </div>
 </div>
+
 <?php include_once("includes/footer.php"); ?>

@@ -12,7 +12,7 @@ $dados = array(
 
 if (trim(empty($dados['titulo']))) {
     header('location: ../formulario.php?titulo=false');
-    exit;
+    exit;    
 }
 
 if (trim(empty($dados['resumo']))) {

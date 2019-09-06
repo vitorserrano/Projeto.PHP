@@ -35,6 +35,8 @@ if ($retorno > 0) {
   date_default_timezone_set('America/Sao_Paulo');
   $hoje = date('Y-m-d');
 
+  $dados['senha'] = md5($dados['senha']);
+
   $sql = ("INSERT INTO `usuario` (nome_usuario, email_usuario, senha_usuario, dt_registro) VALUES (:nome, :email, :senha, :dt_registro)");
   $exec = Db::connection()->prepare($sql);
   $exec->bindValue(":nome", $dados['nome']);
