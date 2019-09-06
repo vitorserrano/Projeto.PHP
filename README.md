@@ -18,3 +18,4 @@
 2. Também, foi inserido a seguinte linha de comando: array(PDO::MYSQL_ATTR_INIT_COMMAND => "SET NAMES utf8")
 Isso serve para que caso seja adicionado alguma informação via banco de dados, para que os caracteres especiais inseridos
 não fiquem com formatação incorreta.
+3. Para realizar o uso do projeto corretamente, importar o arquivo de banco de dados MySQL dentro da pasta "DataBase", criar um banco de dados com o nome projeto - utf8_unicode_ci.
